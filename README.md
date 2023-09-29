@@ -1,8 +1,8 @@
-# React + Vite
+# May Vet Clinic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a coding test from Ultimate Solution.
 
-Currently, two official plugins are available:
+Currently, I use Render Cloud Service for testing CRUD:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-https://patient-list-w0nz.onrender.com/patients
+-https://github.com/ayemyatlwin/MockApi-for-May-Vet-clinic
