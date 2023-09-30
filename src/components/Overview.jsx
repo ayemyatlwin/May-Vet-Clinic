@@ -2,7 +2,7 @@ import React from 'react'
 
 const Overview = () => {
   return (
-    <div className=' flex flex-col '>
+    <div className=' flex flex-col p-5'>
     <h1>Patient List</h1>
     <div className=' flex justify-between '>
         <div className="flex flex-col">
@@ -14,7 +14,7 @@ const Overview = () => {
            </div>
         </div>
         <div className="flex flex-col">
-            <h1>Add new patienr</h1>
+            <h1>Add new patient</h1>
             <h1>Rows per page</h1>
         </div>
       
