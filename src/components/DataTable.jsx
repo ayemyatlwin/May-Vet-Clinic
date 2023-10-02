@@ -9,6 +9,7 @@ import axios from "axios";
 import EditPatient from "./EditPatient";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { CircularProgress } from "@mui/material";
 
 const DataTable = ({
   searchQuery,
@@ -17,6 +18,7 @@ const DataTable = ({
   pets,
   setPets,
 }) => {
+  
   const [editModal, setEditModal] = useState(false);
   const [selectedRows, setSelectedRows] = useState([]);
   const [dropDownOpen, setDropDownOpen] = useState(null);
@@ -82,7 +84,8 @@ const DataTable = ({
 
   return (
     <div className=" data-container p-4">
-      <table className="min-w-full">
+      {pets?.length===0 ? (<CircularProgress sx={{color:"#54bab9"}} />): (
+        <table className="min-w-full">
         <thead>
           <tr className=" border-b border-t border-gray-300">
             <th className="headerText p-2">
@@ -227,7 +230,7 @@ const DataTable = ({
                     <td className="bodyText p-2 border-b">
                       {filpet?.contactNo}
                     </td>
-                    <td className="bodyText p-2 border-b">{filpet?.address}</td>
+                    <td className="bodyText p-2 border-b">{filpet?.address + ", " + filpet?.township + ", " + filpet?.city}</td>
                     <td
                       onClick={() => showDropDown(filpet?.id)}
                       className="bodyText p-2 border-b relative "
@@ -276,6 +279,7 @@ const DataTable = ({
               })}
         </tbody>
       </table>
+      )}
     </div>
   );
 };
