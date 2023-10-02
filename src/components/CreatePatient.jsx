@@ -41,8 +41,8 @@ const CreatePatient = ({ showModal, setShowModal }) => {
     e.preventDefault();
     await addData(patientData);
     console.log(patientData);
-    setShowModal(false)
-    toast.success('Created Successfully', {
+    setShowModal(false);
+    toast.success("Created Successfully", {
       position: "bottom-left",
       autoClose: 2000,
       hideProgressBar: false,
@@ -51,7 +51,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
       draggable: true,
       progress: undefined,
       theme: "colored",
-      });
+    });
   };
 
   return (
@@ -201,8 +201,11 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             status: e.target.value,
                           })
                         }
-                        className="block w-full p-2 mb-3 text-sm text-gray-900 border inputBorder rounded-lg bg-inherit "
+                        className="block w-full p-2 mb-3 text-sm text-gray-900 border inputBorder rounded-lg bg-inherit"
                       >
+                        <option value="" selected disabled>
+                          Select a status
+                        </option>
                         <option value="picky_eat">picky_eater</option>
                         <option value="allergy">allergy</option>
                       </select>
@@ -220,6 +223,9 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         }
                         className="block w-full p-2 mb-3 text-sm text-gray-900 border inputBorder rounded-lg bg-inherit "
                       >
+                        <option value="" selected disabled>
+                          Choose Breed
+                        </option>
                         <option value="Golden Retriever">
                           Golden Retriever
                         </option>
@@ -272,7 +278,10 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                   >
                     Save{" "}
                   </button>
-                  <button onClick={() => setShowModal(false)} className="cancel-btn rounded-md  w-20  text-center">
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="cancel-btn rounded-md  w-20  text-center"
+                  >
                     Cancel
                   </button>
                 </div>

@@ -226,6 +226,9 @@ const EditPatient = ({  setEditModal,pet }) => {
                         }
                         className="block w-full p-2 mb-3 text-sm text-gray-900 border inputBorder rounded-lg bg-inherit "
                       >
+                        <option value="" selected disabled>
+                          Select a status
+                        </option>
                         <option value="picky_eat">picky_eater</option>
                         <option value="allergy">allergy</option>
                       </select>
@@ -246,6 +249,9 @@ const EditPatient = ({  setEditModal,pet }) => {
                         }
                         className="block w-full p-2 mb-3 text-sm text-gray-900 border inputBorder rounded-lg bg-inherit "
                       >
+                        <option value="" selected disabled>
+                          Choose Breed
+                        </option>
                         <option value="Golden Retriever">
                           Golden Retriever
                         </option>
