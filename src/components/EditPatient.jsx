@@ -82,9 +82,9 @@ const EditPatient = ({  setEditModal,pet }) => {
                     </span>
                   </button>
                 </div>
-                <h3 className="mx-auto  Title ">Add New Patient</h3>
+                <h3 className="mx-auto  Title ">Update Patient</h3>
                 <h3 className="mx-auto text-[14px]  ">
-                  Enter New Patient Information Below
+                  Enter Updated Patient Information Below
                 </h3>
 
                 <div className="relative px-7 pt-5 pb-12 flex flex-row gap-12">
