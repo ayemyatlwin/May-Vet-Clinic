@@ -145,7 +145,7 @@ const DataTable = ({
                   <td className="bodyText p-2 border-b">{pet?.gender}</td>
                   <td className="bodyText p-2 border-b">{pet?.dateOfBirth}</td>
                   <td className="bodyText p-2 border-b">{pet?.contactNo}</td>
-                  <td className="bodyText p-2 border-b">{pet?.address}</td>
+                  <td className="bodyText p-2 border-b">{pet?.address + ", " + pet?.township + ", " + pet?.city}</td>
                   <td
                     onClick={() => showDropDown(pet?.id)}
                     className="bodyText p-2 border-b relative "
