@@ -5,7 +5,7 @@ export default function SelectSmall({ val, valueOne, valueTwo, valueThree }) {
     <>
       <select
         id="small"
-        className="block w-full p-2 mb-3 text-sm text-gray-900 border rounded-full bg-inherit "
+        className="block w-full p-2 mb-3 text-sm text-placeholder  selectBorders rounded-full bg-inherit "
       >
         <option value={val}>{val}</option>
         <option value="US">{valueOne}</option>

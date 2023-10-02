@@ -3,8 +3,9 @@ import search from "../images/search.png";
 import SelectSmall from "./SelectSmall";
 import CreatePatient from "./CreatePatient";
 
-const Overview = () => {
+const Overview = ({searchQuery,handleSearchInputChange}) => {
   const [showModal, setShowModal] = useState(false);
+ 
   return (
     <div className=" flex flex-col px-5">
       <h1 className=" Title">Patient List</h1>
@@ -15,7 +16,9 @@ const Overview = () => {
               className=" outline-none"
               type="text"
               name=""
-              placeholder="search by name"
+              placeholder="Search by Pet Name"
+              value={searchQuery}
+              onChange={handleSearchInputChange}
               id=""
             />
             <img src={search} className="h-3 w-3 mt-1.5  ms-auto" alt="" />
@@ -40,7 +43,7 @@ const Overview = () => {
           <div className="flex mt-2 ">
           <label
         htmlFor="small"
-        className="block  text-xs font-medium text-gray-900 "
+        className="block  text-xs font-medium text-[#ACB3C0] "
       >
         Rows per page:
       </label>
