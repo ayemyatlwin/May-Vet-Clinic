@@ -1,26 +1,60 @@
-import React from 'react'
+import React, { useState } from "react";
+import search from "../images/search.png";
+import SelectSmall from "./SelectSmall";
+import CreatePatient from "./CreatePatient";
 
 const Overview = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
-    <div className=' flex flex-col p-5'>
-    <h1>Patient List</h1>
-    <div className=' flex justify-between '>
+    <div className=" flex flex-col px-5">
+      <h1 className=" Title">Patient List</h1>
+      <div className=" flex justify-between ">
         <div className="flex flex-col">
-            <h1>Search</h1>
-            <div className="flex gap-3">
-                <h1> Status All</h1>
-                <h1> Breed All</h1>
-
-           </div>
+          <div className="inputSearch flex py-1">
+            <input
+              className=" outline-none"
+              type="text"
+              name=""
+              placeholder="search by name"
+              id=""
+            />
+            <img src={search} className="h-3 w-3 mt-1.5  ms-auto" alt="" />
+          </div>
+          <div className="flex gap-3 mt-2">
+            <SelectSmall
+              val={"Status"}
+              valueOne={"allergy"}
+              valueTwo={"picky-eater"}
+            />
+            <SelectSmall
+              val={"Breed All"}
+              valueOne={"Golden Retriever"}
+              valueTwo={"Beagle"}
+              valueThree={"Spaniel"}
+            />
+          </div>
         </div>
         <div className="flex flex-col">
-            <h1>Add new patient</h1>
-            <h1>Rows per page</h1>
+          {/*  */}
+          <CreatePatient showModal={showModal} setShowModal={setShowModal} />
+          <div className="flex mt-2 ">
+          <label
+        htmlFor="small"
+        className="block  text-xs font-medium text-gray-900 "
+      >
+        Rows per page:
+      </label>
+          <SelectSmall
+            val={"10"}
+            valueOne={"1"}
+            valueTwo={"2"}
+            valueThree={"3"}
+          />
+          </div>
         </div>
-      
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Overview
+export default Overview;
