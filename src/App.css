@@ -34,7 +34,7 @@
   text-align: start;
 }
 .text-placeholder{
-  color: var(--placeHolder-color);
+  color: var(--text-color);
 }
 
 nav{
@@ -91,6 +91,7 @@ nav{
 }
 .selectBorders{
   border: 1px solid var(--accent-color);
+
 }
 
 .add-btn{

@@ -43,7 +43,7 @@ const Overview = ({searchQuery,handleSearchInputChange}) => {
           <div className="flex mt-2 ">
           <label
         htmlFor="small"
-        className="block  text-xs font-medium text-[#ACB3C0] "
+        className="block  text-xs font-medium  "
       >
         Rows per page:
       </label>
