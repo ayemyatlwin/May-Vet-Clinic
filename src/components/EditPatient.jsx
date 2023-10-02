@@ -24,12 +24,12 @@ const EditPatient = ({  setEditModal,pet }) => {
     pawrent: pet?.pawrent,
     gender: pet?.gender,
     contactNo: pet?.contactNo,
-    city: "",
+    city: pet?.city,
     status: pet?.status,
     breed: pet?.breed,
     dateOfBirth: pet?.dateOfBirth,
     address: pet?.address,
-    township: "",
+    township: pet?.township,
   });
 
   const updateData = async (patientData) => {
