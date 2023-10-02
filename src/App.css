@@ -104,5 +104,26 @@ nav{
   padding: 4px 20px;
   margin: 0;
 }
+.inputBorder{
+  border: 1px solid var(--background-color);
+  padding: 2px;
+}
 
+.save-btn{
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 6px 20px;
 
+}
+
+.update-btn{
+  background: var(--update-button-color);
+  color: var(--text-color);
+  padding: 6px 20px;
+
+}
+.cancel-btn{
+  border: 1px solid var(--subtitle-color);
+  padding: 6px 20px;
+
+}

@@ -99,7 +99,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             petname: e.target.value,
                           })
                         }
-                        className="shadow appearance-none border rounded w-full py-2  text-black"
+                        className="shadow appearance-none border inputBorder rounded w-full py-2  text-black"
                       />
                       <label className="block text-black text-sm  mb-1 mt-1">
                         Pawrent
@@ -112,7 +112,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             pawrent: e.target.value,
                           })
                         }
-                        className="shadow appearance-none border rounded w-full py-2  text-black"
+                        className="shadow appearance-none border inputBorder rounded w-full py-2  text-black"
                       />
                       <label className="block text-black text-sm  mt-1 mb-1">
                         Gender
@@ -133,7 +133,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             }
                             type="radio"
                             name="inline-radio-group"
-                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
+                            className="w-4 h-4 text-blue-600 bg-gray-100 inputBorder "
                           />
                         </div>
                         <div className="flex gap-3 items-center mr-4">
@@ -154,7 +154,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             id="inline-2-radio"
                             type="radio"
                             name="inline-radio-group"
-                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
+                            className="w-4 h-4 text-blue-600 bg-gray-100 inputBorder "
                           />
                         </div>
                       </div>
@@ -170,7 +170,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             contactNo: e.target.value,
                           })
                         }
-                        className="shadow appearance-none border rounded w-full py-2 px-1 text-black"
+                        className="shadow appearance-none border inputBorder rounded w-full py-2 px-1 text-black"
                       />
                       <label className="block text-black text-sm  mb-1 mt-1">
                         City
@@ -183,7 +183,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             city: e.target.value,
                           })
                         }
-                        className="shadow appearance-none border rounded w-full py-2 px-1 text-black"
+                        className="shadow appearance-none border inputBorder rounded w-full py-2 px-1 text-black"
                       />
                     </form>
                   </div>
@@ -201,7 +201,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             status: e.target.value,
                           })
                         }
-                        className="block w-full p-2 mb-3 text-sm text-gray-900 border rounded-lg bg-inherit "
+                        className="block w-full p-2 mb-3 text-sm text-gray-900 border inputBorder rounded-lg bg-inherit "
                       >
                         <option value="picky_eat">picky_eater</option>
                         <option value="allergy">allergy</option>
@@ -218,7 +218,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             breed: e.target.value,
                           })
                         }
-                        className="block w-full p-2 mb-3 text-sm text-gray-900 border rounded-lg bg-inherit "
+                        className="block w-full p-2 mb-3 text-sm text-gray-900 border inputBorder rounded-lg bg-inherit "
                       >
                         <option value="Golden Retriever">
                           Golden Retriever
@@ -233,7 +233,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)} // Set the selected date in state
                         dateFormat="dd/MM/yyyy" // Use "dd" for day, "MM" for month, and "yyyy" for year
-                        className="shadow appearance-none border rounded w-full py-2 mb-1  px-1 text-black"
+                        className="shadow appearance-none border inputBorder rounded w-full py-2 mb-1  px-1 text-black"
                         placeholderText="Select Date"
                       />
                       <label className="block text-black text-sm  mb-1 mt-1">
@@ -247,7 +247,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             address: e.target.value,
                           })
                         }
-                        className="shadow appearance-none border rounded w-full py-2 px-1 text-black"
+                        className="shadow appearance-none border inputBorder rounded w-full py-2 px-1 text-black"
                       />
                       <label className="block text-black text-sm  mb-1 mt-1">
                         Township
@@ -260,7 +260,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             township: e.target.value,
                           })
                         }
-                        className="shadow appearance-none border rounded w-full py-2 px-1 text-black"
+                        className="shadow appearance-none border inputBorder rounded w-full py-2 px-1 text-black"
                       />
                     </form>
                   </div>
@@ -268,11 +268,11 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                 <div className=" flex justify-center  pb-3 gap-5">
                   <button
                     onClick={handleSave}
-                    className="px-2 py-2 w-20 bg-black text-white text-center"
+                    className="w-20 save-btn rounded-md  text-center"
                   >
                     Save{" "}
                   </button>
-                  <button onClick={() => setShowModal(false)} className="px-2 py-2 w-20 bg-black text-white text-center">
+                  <button onClick={() => setShowModal(false)} className="cancel-btn rounded-md  w-20  text-center">
                     Cancel
                   </button>
                 </div>
