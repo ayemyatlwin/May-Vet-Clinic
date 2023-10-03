@@ -1,22 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import add from "../images/add.png";
 import DatePicker from "react-datepicker";
-import pencil from "../images/edit.png";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 const EditPatient = ({  setEditModal,pet }) => {
-  const formatDate = (date) => {
-    if (!date) return ""; // Return an empty string if the date is not set
-    const day = date.getDate();
-    const month = date.getMonth() + 1; // Month is zero-based
-    const year = date.getFullYear();
-    return `${day}-${month}-${year}`;
-  };
-  const todayDate = new Date();
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const formattedDate = formatDate(selectedDate);
+//  console.log(pet);
+ const date=new Date(pet?.dateOfBirth);
+//  console.log(date,"hhhh");
+  const [selectedDate, setSelectedDate] = useState(date);
 
 //   console.log(selectedDate);
   const [patientData, setPatientData] = useState({
@@ -27,7 +20,7 @@ const EditPatient = ({  setEditModal,pet }) => {
     city: pet?.city,
     status: pet?.status,
     breed: pet?.breed,
-    dateOfBirth: pet?.dateOfBirth,
+    dateOfBirth: selectedDate,
     address: pet?.address,
     township: pet?.township,
   });
@@ -38,9 +31,9 @@ const EditPatient = ({  setEditModal,pet }) => {
         `https://patient-list-w0nz.onrender.com/patients/${pet?.id}`,
         patientData
       );
-      console.log(data);
+    //   console.log(data);
     } catch (error) {
-      console.error("Error updating data:", error);
+    //   console.error("Error updating data:", error);
     }
   };
   const handleSave = async (e) => {
@@ -48,8 +41,12 @@ const EditPatient = ({  setEditModal,pet }) => {
         e.stopPropagation();
         e.preventDefault(); // Check if e is defined and has preventDefault method
       }
+      setPatientData({
+        ...patientData,
+        dateOfBirth: selectedDate,
+      });
     await updateData(patientData);
-    console.log(patientData);
+    // console.log(patientData);
     setEditModal(false)
     toast.success('Edited Successfully', {
         position: "bottom-left",
@@ -62,6 +59,13 @@ const EditPatient = ({  setEditModal,pet }) => {
         theme: "colored",
         })
   };
+  useEffect(() => {
+    setPatientData({
+      ...patientData,
+      dateOfBirth: selectedDate, // Update dateOfBirth with selectedDate
+    });
+  }, [selectedDate]);
+  
 
   return (
     <>
@@ -262,7 +266,7 @@ const EditPatient = ({  setEditModal,pet }) => {
                         Date of birth
                       </label>
                       <DatePicker
-                        selected={selectedDate}
+                        selected={patientData.dateOfBirth}
                         onChange={(date) => setSelectedDate(date)} // Set the selected date in state
                         dateFormat="dd/MM/yyyy" // Use "dd" for day, "MM" for month, and "yyyy" for year
                         className="shadow appearance-none border inputBorder rounded w-full py-2 mb-1  px-1 text-black"

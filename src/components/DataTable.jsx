@@ -42,6 +42,15 @@ const DataTable = ({
     fetchData();
   }, [pets]);
 
+  const formatDate = (dateString) => {
+    if (!dateString) return ""; // Return an empty string if the date is not set
+    const date = new Date(dateString); // Parse the dateString into a Date object
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Month is zero-based
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+
   const toggleSelectRow = (id) => {
     if (selectedRows.includes(id)) {
       setSelectedRows(selectedRows.filter((rowId) => rowId !== id));
@@ -125,7 +134,7 @@ const DataTable = ({
                     />
                   </td>
                   <td className="bodyText border-b p-2">
-                    {pet?.breed.slice(0, 1) + " - 0" + i + 1}
+                  {pet?.breed ? pet.breed.slice(0, 1) + " - 0" + (i + 1) : "N/A"}
                   </td>
                   <td className="bodyText p-2 border-b">{pet?.petname}</td>
                   <td className="bodyText p-2 border-b">
@@ -146,7 +155,7 @@ const DataTable = ({
                   <td className="bodyText p-2 border-b">{pet?.pawrent}</td>
                   <td className="bodyText p-2 border-b">{pet?.breed}</td>
                   <td className="bodyText p-2 border-b">{pet?.gender}</td>
-                  <td className="bodyText p-2 border-b">{pet?.dateOfBirth}</td>
+                  <td className="bodyText p-2 border-b">{formatDate(pet?.dateOfBirth)}</td>
                   <td className="bodyText p-2 border-b">{pet?.contactNo}</td>
                   <td className="bodyText p-2 border-b">{pet?.address + ", " + pet?.township + ", " + pet?.city}</td>
                   <td
@@ -203,7 +212,9 @@ const DataTable = ({
                       />
                     </td>
                     <td className="bodyText border-b p-2">
-                      {filpet?.breed.slice(0, 1) + " - 0" + i + 1}
+                      {filpet?.breed ? filpet.breed.slice(0, 1) + " - 0" + (i + 1) : "N/A"}
+
+
                     </td>
                     <td className="bodyText p-2 border-b">{filpet?.petname}</td>
                     <td className="bodyText p-2 border-b">
@@ -225,7 +236,7 @@ const DataTable = ({
                     <td className="bodyText p-2 border-b">{filpet?.breed}</td>
                     <td className="bodyText p-2 border-b">{filpet?.gender}</td>
                     <td className="bodyText p-2 border-b">
-                      {filpet?.dateOfBirth}
+                      {formatDate(filpet?.dateOfBirth)}
                     </td>
                     <td className="bodyText p-2 border-b">
                       {filpet?.contactNo}

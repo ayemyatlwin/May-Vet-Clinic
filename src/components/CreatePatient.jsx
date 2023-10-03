@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import add from "../images/add.png";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -6,18 +6,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const CreatePatient = ({ showModal, setShowModal }) => {
-  const formatDate = (date) => {
-    if (!date) return ""; // Return an empty string if the date is not set
-    const day = date.getDate();
-    const month = date.getMonth() + 1; // Month is zero-based
-    const year = date.getFullYear();
-    return `${day}-${month}-${year}`;
-  };
-  const todayDate = new Date();
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const formattedDate = formatDate(selectedDate);
+ 
+  const [selectedDate, setSelectedDate] = useState(null);
 
-  // console.log(selectedDate);
+  // console.log( selectedDate);
   const [patientData, setPatientData] = useState({
     petname: "",
     pawrent: "",
@@ -26,7 +18,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
     city: "",
     status: "",
     breed: "",
-    dateOfBirth: formattedDate,
+    dateOfBirth: "",
     address: "",
     township: "",
   });
@@ -53,7 +45,13 @@ const CreatePatient = ({ showModal, setShowModal }) => {
       theme: "colored",
     });
   };
-
+  useEffect(() => {
+    setPatientData({
+      ...patientData,
+      dateOfBirth: selectedDate, // Update dateOfBirth with selectedDate
+    });
+  }, [selectedDate]);
+  
   return (
     <>
       <button
@@ -105,6 +103,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Pawrent
                       </label>
                       <input
+                      required
                         value={patientData?.pawrent}
                         onChange={(e) =>
                           setPatientData({
@@ -126,6 +125,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             Male
                           </label>
                           <input
+
                             id="inline-radio"
                             value={"Male"}
                             onChange={(e) =>
@@ -163,6 +163,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Contact No.
                       </label>
                       <input
+                      required
                         value={patientData.contactNo}
                         onChange={(e) =>
                           setPatientData({
@@ -193,6 +194,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Status
                       </label>
                       <select
+                      required
                         id="small"
                         value={patientData.status} // Set the value to the state variable
                         onChange={(e) =>
@@ -213,6 +215,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Breed
                       </label>
                       <select
+                      required
                         id="small"
                         value={patientData.breed} // Set the value to the state variable
                         onChange={(e) =>
@@ -246,6 +249,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Address
                       </label>
                       <textarea
+                      required
                         value={patientData?.address}
                         onChange={(e) =>
                           setPatientData({

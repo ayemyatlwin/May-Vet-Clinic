@@ -12,9 +12,13 @@ const Home = () => {
     setSearchQuery(e.target.value);
   };
 
-  const filteredPets = pets.filter((pet) =>
-    pet?.petname.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  
+  const filteredPets = pets?.filter((pet) => {
+    if (pet && pet.petname) {
+      return pet.petname.toLowerCase().includes(searchQuery.toLowerCase());
+    }
+    return false; // Handle the case where pet or pet.petname is undefined
+  });
   return (
     <div className="mx-auto">
       <Navbar />
