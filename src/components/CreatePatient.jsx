@@ -6,7 +6,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const CreatePatient = ({ showModal, setShowModal }) => {
- 
   const [selectedDate, setSelectedDate] = useState(null);
 
   // console.log( selectedDate);
@@ -51,7 +50,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
       dateOfBirth: selectedDate, // Update dateOfBirth with selectedDate
     });
   }, [selectedDate]);
-  
+
   return (
     <>
       <button
@@ -65,7 +64,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
 
       {showModal ? (
         <>
-          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto shadow-2xl fixed inset-0 z-50 ">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex justify-end p-3  rounded-t ">
@@ -78,7 +77,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                     </span>
                   </button>
                 </div>
-                <h3 className="mx-auto  Title ">Add New Patient</h3>
+                <h3 className="mx-auto font-semibold  Title ">Add New Patient</h3>
                 <h3 className="mx-auto text-[14px]  ">
                   Enter New Patient Information Below
                 </h3>
@@ -103,7 +102,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Pawrent
                       </label>
                       <input
-                      required
+                        required
                         value={patientData?.pawrent}
                         onChange={(e) =>
                           setPatientData({
@@ -125,7 +124,6 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                             Male
                           </label>
                           <input
-
                             id="inline-radio"
                             value={"Male"}
                             onChange={(e) =>
@@ -163,7 +161,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Contact No.
                       </label>
                       <input
-                      required
+                        required
                         value={patientData.contactNo}
                         onChange={(e) =>
                           setPatientData({
@@ -194,7 +192,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Status
                       </label>
                       <select
-                      required
+                        required
                         id="small"
                         value={patientData.status} // Set the value to the state variable
                         onChange={(e) =>
@@ -215,7 +213,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Breed
                       </label>
                       <select
-                      required
+                        required
                         id="small"
                         value={patientData.breed} // Set the value to the state variable
                         onChange={(e) =>
@@ -249,7 +247,7 @@ const CreatePatient = ({ showModal, setShowModal }) => {
                         Address
                       </label>
                       <textarea
-                      required
+                        required
                         value={patientData?.address}
                         onChange={(e) =>
                           setPatientData({

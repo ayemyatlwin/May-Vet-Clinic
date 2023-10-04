@@ -3,12 +3,11 @@ import search from "../images/search.png";
 import SelectSmall from "./SelectSmall";
 import CreatePatient from "./CreatePatient";
 
-const Overview = ({searchQuery,handleSearchInputChange}) => {
-  const [showModal, setShowModal] = useState(false);
- 
+const Overview = ({ searchQuery, handleSearchInputChange,showModal,setShowModal }) => {
+
   return (
     <div className=" flex flex-col px-5">
-      <h1 className=" Title">Patient List</h1>
+      <h1 className=" Title font-semibold">Patient List</h1>
       <div className=" flex justify-between ">
         <div className="flex flex-col">
           <div className="inputSearch flex py-1">
@@ -41,18 +40,15 @@ const Overview = ({searchQuery,handleSearchInputChange}) => {
           {/*  */}
           <CreatePatient showModal={showModal} setShowModal={setShowModal} />
           <div className="flex mt-2 ">
-          <label
-        htmlFor="small"
-        className="block  text-xs font-medium  "
-      >
-        Rows per page:
-      </label>
-          <SelectSmall
-            val={"10"}
-            valueOne={"1"}
-            valueTwo={"2"}
-            valueThree={"3"}
-          />
+            <label htmlFor="small" className="block  text-xs font-medium  ">
+              Rows per page:
+            </label>
+            <SelectSmall
+              val={"10"}
+              valueOne={"1"}
+              valueTwo={"2"}
+              valueThree={"3"}
+            />
           </div>
         </div>
       </div>

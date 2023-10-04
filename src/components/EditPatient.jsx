@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import add from "../images/add.png";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
@@ -70,9 +69,9 @@ const EditPatient = ({  setEditModal,pet }) => {
   return (
     <>
        <>
-          <div  className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div  className="flex justify-center items-center overflow-x-hidden shadow-2xl overflow-y-auto fixed inset-0 z-50  ">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none ">
                 <div className="flex justify-end p-3  rounded-t ">
                   <button
                     className="bg-transparent border-0 text-black float-right"
@@ -86,7 +85,7 @@ const EditPatient = ({  setEditModal,pet }) => {
                     </span>
                   </button>
                 </div>
-                <h3 className="mx-auto  Title ">Update Patient</h3>
+                <h3 className="mx-auto font-semibold  Title ">Update Patient</h3>
                 <h3 className="mx-auto text-[14px]  ">
                   Enter Updated Patient Information Below
                 </h3>
